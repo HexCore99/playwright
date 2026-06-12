@@ -21,7 +21,7 @@ class Daraz:
 
     def get_product_card(self, page, product_name):
         product = page.locator(self.product_card_class, has_text=product_name).first
-        expect(product).to_be_visible(timeout=10000)
+        expect(product).to_be_visible(timeout=10000)  # ei line ki kore?
         return product
 
     def get_product_price_text(self, page, product_name):
@@ -33,7 +33,7 @@ class Daraz:
         if match:
             return match.group()
 
-        raise AssertionError(f"Price not found for product: {product_name}")
+        raise AssertionError(f"Price not found for product: {product_name}")  # ki kore?
 
     def get_product_price(self, page, product_name):
         price_text = self.get_product_price_text(page, product_name)
